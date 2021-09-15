@@ -57,3 +57,15 @@ Route::post('save', 'App\Http\Controllers\MyController@saveForm')->name('sendcon
 
 Route::post('saveworkuser', 'App\Http\Controllers\MyController@saveworkuser')->name('saveworkuser');
 
+
+Route::get('/gitpull', function () {
+    \Artisan::call('app:refresh');
+    \Artisan::call('cache:clear');
+    
+    }); 
+    Route::post('/gitpull', function () {
+    \Artisan::call('app:refresh');
+    \Artisan::call('cache:clear');
+    
+    });
+    
