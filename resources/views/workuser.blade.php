@@ -5,24 +5,25 @@
         
     </x-slot>
 
+    @if ($message = Session::get('error'))
+            <div class="alert alert-error">
+                <strong>{{ $message }}</strong>
+            </div>
+          @endif
 
+    <form action="{{ route('viewwork') }}" method="post" enctype="multipart/form-data">Work Portfolio
+@csrf
+    <div class="form-group">
+        <label for="contact_info">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter Password">
+    </div>
 
-    <div class="row">
-        @foreach($workimages as $img)
-        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 cat{{$img->category_id}}">
-            {{$img->image_title}}
-                <img
-                    src="/storage/uploads/{{$img->id}}"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt=""
-                />
-        </div>
-        @endforeach
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" name="createworkuser" value="View Work">
     </div>
 
 
-
-
+</form>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">

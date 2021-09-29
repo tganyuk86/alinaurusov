@@ -1,0 +1,99 @@
+.header-title-text {
+    font-family: "Anton";
+    font-weight: 600;
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    font-family: Anton;
+    font-weight: bold;
+    letter-spacing: .01rem;
+    text-transform: none;
+    line-height: 1.3em;
+    font-size: 2rem;
+    color: #f2b6f2;
+    font-size: calc((2.8 - 1) * 1.2vw + 1rem);
+    text-align: center;
+}
+
+/* adding a will affect all links within the div using this class  */
+
+.header-nav-item a{
+    text-decoration: none;
+}
+
+
+.header-nav-item{
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    font-size: 1.2rem;
+    font-family: neue-haas-grotesk-text;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .13em;
+    text-transform: none;
+    line-height: 1.5em;
+    
+    color: #96a7b0;
+    text-decoration: none;
+    backface-visibility: hidden;
+    padding: .1em 0;
+    display: block;
+    outline: 0;
+    cursor: pointer;
+    background: transparent;
+    white-space: nowrap;
+    overflow-wrap: break-word;
+}
+
+
+
+.header-actions--right .header-actions-action--social .icon:first-child {
+    margin-left: 1vw;
+}
+.header-actions--right .header-actions-action--social .icon {
+    width: 30px;
+    height: 30px;
+}
+.icon {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 25px;
+    box-sizing: content-box;
+    line-height: 1;
+}
+
+
+.header-ext-gallery{
+    font-family: Anton;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc((2.1 - 1) * 1.2vw + 1rem);
+    font-weight: bold;
+    letter-spacing: .05em;
+    text-transform: none;
+    text-align: center;
+    background: transparent;
+    white-space: initial;
+    background-repeat: unset;
+    background-image: unset;
+    background-size: unset;
+    background-position: unset;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .2em;
+    text-decoration-skip-ink: auto;
+    color: #000;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+
+
+              
+
+
+

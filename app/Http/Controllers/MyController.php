@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Contact;
+use App\Models\Contact;
 
-use App\Gallery;
+use App\Models\Gallery;
 
-use App\Category;
+use App\Models\Category;
 
-use App\Workuser;
+use App\Models\Workuser;
 
 class MyController extends Controller
 {
@@ -45,7 +45,42 @@ class MyController extends Controller
     public function work()
     {
         
-        return view('work');
+        return view('workuser');
+    }
+
+    public function viewwork(Request $request)
+    {
+       // dd($request->all());
+        $results = Workuser::where('password', $request['password'])->get()->first();
+
+        if($results)
+        {
+            $workimages = Gallery::where('category_id', '3')->get();
+
+            return view('work', [
+                'workimages' => $workimages,
+            ]);
+        }
+
+        return back()->with('error','Bad Password');
+    }
+    
+
+    public function workuser()
+    {
+        
+        return view('workuser');
+    }
+
+    public function worktable()
+    {
+        $workuser = Workuser::all();
+       
+        return view('worktable',[
+            'work' => $workuser,            
+        ]);
+
+        return view('workuser');
     }
 
     public function savecontactus(Request $request)
@@ -132,15 +167,34 @@ class MyController extends Controller
              
     }
 
+    public function deletework($workIDfordelete)
+    {
+        $workfordelete = Workuser::find($workIDfordelete)->delete();
+                        
+                return back()
+                ->with('success','Work name and password has been deleted.');                         
+             
+    }
+
     public function gallery()
     {
-        $images = Gallery::where('status', 'active')->get();
-        $category = Category::all();
+        $images = Gallery::where('status', 'active')->where('category_id', '!=', '3')->get();
+        $category = Category::where('id', '!=', '3')->get();
         return view('gallery', [
             'myImages' => $images,
             'categories' => $category
         ]);
     }
 
+
+    public function index()
+    {
+        $images = Gallery::where('status', 'active')->get();
+        $category = Category::all();
+        return view('welcome', [
+            'myImages' => $images,
+            'categories' => $category
+        ]);
+    }
         
 }
